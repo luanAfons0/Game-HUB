@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-black: #000000;
+  --color-light-black: #00000080;
+  --color-white: #ffffff;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-light-black);
+}
+
+canvas {
+  background-color: var(--color-white);
+  border: 2px solid var(--color-black);
+}
