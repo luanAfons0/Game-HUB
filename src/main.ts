@@ -1,6 +1,9 @@
-import "./style.css";
+import Game from "./Game";
 
-const $canvas: HTMLCanvasElement = document.getElementById(
-  "game"
-) as HTMLCanvasElement;
-const context = $canvas.getContext("2d");
+const game = new Game();
+
+const $startButton = document.getElementById("start-game");
+
+if ($startButton) {
+  $startButton.addEventListener("click", game?.gameStart);
+}
