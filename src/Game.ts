@@ -1,9 +1,11 @@
+import Paddle from "./Entities/Paddle";
 import Ball from "./Entities/Ball";
 
 class Game {
   private start: boolean = false;
   private readonly context!: CanvasRenderingContext2D;
   private ball!: Ball;
+  private paddle!: Paddle;
 
   constructor() {
     const $canvas: HTMLCanvasElement = document.getElementById(
@@ -14,6 +16,7 @@ class Game {
     if (context) {
       this.context = context;
       this.ball = new Ball(this.context);
+      this.paddle = new Paddle(this.context);
     }
   }
 
@@ -32,6 +35,8 @@ class Game {
   public updateGame = () => {
     this.ball.update();
     this.ball.draw();
+    this.paddle.update();
+    this.paddle.draw();
   };
 }
 

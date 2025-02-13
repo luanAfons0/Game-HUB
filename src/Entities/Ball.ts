@@ -3,11 +3,11 @@ import CONSTANTS from "../Constants";
 
 class Ball implements Sprite {
   public readonly context: CanvasRenderingContext2D;
-  private x!: number;
-  private y!: number;
-  private xMoveSpeed!: number;
-  private yMoveSpeed!: number;
-  private ballSize!: number;
+  public x: number;
+  public y: number;
+  private xMoveSpeed: number;
+  private yMoveSpeed: number;
+  private ballSize: number;
 
   constructor(context: any) {
     this.context = context;
