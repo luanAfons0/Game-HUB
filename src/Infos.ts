@@ -1,9 +1,0 @@
-enum Infos {
-    MAIN_COLOR = "#0095DD",
-    BALL_SIZE = 10,
-    MOVEMENT_SPEED = 2,
-    CANVAS_WIDTH = 480,
-    CANVAS_HEIGHT = 320
-}
-
-export default Infos;

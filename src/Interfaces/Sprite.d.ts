@@ -1,7 +1,7 @@
 interface Sprite {
-    context: any;
-    draw: Function;
-    update: Function;
+  context: CanvasRenderingContext2D;
+  draw: Function;
+  update: Function;
 }
 
 export default Sprite;
