@@ -6,6 +6,8 @@ class Game {
   private readonly context!: CanvasRenderingContext2D;
   private ball!: Ball;
   private paddle!: Paddle;
+  public static gameOver: boolean = false;
+  public static interval: number = 0;
 
   constructor() {
     const $canvas: HTMLCanvasElement = document.getElementById(
@@ -28,7 +30,7 @@ class Game {
 
   public gameLoop() {
     if (this.start) {
-      setInterval(this.updateGame, 10);
+      Game.interval = setInterval(this.updateGame, 10);
     }
   }
 

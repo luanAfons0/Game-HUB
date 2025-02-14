@@ -1,5 +1,6 @@
 import Sprite from "../Interfaces/Sprite";
 import CONSTANTS from "../Constants";
+import Game from "../Game";
 
 class Ball implements Sprite {
   public readonly context: CanvasRenderingContext2D;
@@ -36,13 +37,20 @@ class Ball implements Sprite {
     this.x += this.xMoveSpeed;
     this.y -= this.yMoveSpeed;
 
-    if (
-      this.y - this.ballSize / 2 < 0 ||
-      this.y + this.ballSize / 2 > CONSTANTS.CANVAS_HEIGHT
-    ) {
+    // Check for game over
+    if (this.y + this.ballSize / 2 > CONSTANTS.CANVAS_HEIGHT) {
+      Game.gameOver = true;
+      alert("Game over!");
+      document.location.reload();
+      clearInterval(Game.interval);
+    }
+
+    // Ball collision on top
+    if (this.y - this.ballSize / 2 < 0) {
       this.yMoveSpeed = -this.yMoveSpeed;
     }
 
+    // Ball collision on X
     if (
       this.x - this.ballSize / 2 < 0 ||
       this.x + this.ballSize / 2 > CONSTANTS.CANVAS_WIDTH
